@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Movies by TEAM US</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 18px;
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    color: #ff5733;
+    margin-bottom: 18px;
+    font-size: 2.25em;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
+    gap: 35px;
+    padding: 0 8px;
+}
+
+.movie {
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
+    border-radius: 8px; /* Increased border radius for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
+}
+
+.movie:hover {
+    transform: scale(1.05); /* Slightly increased scale effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); /* Deeper shadow on hover */
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid #ff5733; /* Thicker accent color for image border */
+}
+
+.movie-title {
+    background-color: rgba(255, 87, 51, 0.95); /* More opaque background */
+    color: #fff;
+    font-size: 1.1rem; /* Use rem for better scalability */
+    padding: 0.5rem 1rem; /* Use rem for consistent spacing */
+    border-radius: 0.5rem; /* Rounded corners */
+    margin: -1.25rem auto 0.625rem; /* Adjusted margin for spacing */
+    z-index: 1; /* Ensure title is above other elements */
+    position: relative;
+    max-width: 90%; /* Allow title to fit within the card */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    text-align: center; /* Center align text for better aesthetics */
+    font-weight: bold; /* Make the title stand out */
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.release-date {
+    font-size: 12px;
+    color: #ddd;
+    margin: 4px 0;
+}
+
+.countdown {
+    font-size: 16px;
+    color: #ff5733;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Upcoming Movies by TEAM US</h1>
+    <div class="movie-container">
+        <div class="movie">
+            <div class="movie-title">WWE Bad Blood 2024</div>
+            <img src="WBB.jpg" alt="WWE Bad Blood 2024">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Oct 05, 2024</div>
+                <div class="countdown" id="countdown9"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Smile 2</div>
+            <img src="smile.jpg" alt="Smile">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Oct 18, 2024</div>
+                <div class="countdown" id="countdown1"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">WWE Crown Jewel 2024</div>
+            <img src="cjs.jpg" alt="WWE Crown Jewel">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Nov 2, 2024 at 7:30 PM</div>
+                <div class="countdown" id="countdown10"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Sonic 3</div>
+            <img src="sonic.jpg" alt="Sonic">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Dec 20, 2024</div>
+                <div class="countdown" id="countdown2"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Babygirl</div>
+            <img src="babygirl.jpg" alt="Babygirl">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Dec 25, 2024</div>
+                <div class="countdown" id="countdown3"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">WWE Royal Rumble 2025</div>
+            <img src="rr.jpg" alt="WWE Royal Rumble 2025">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Feb 2, 2025 at 3:30 AM</div>
+                <div class="countdown" id="countdown11"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Snow White 2025</div>
+            <img src="snoww.jpg" alt="Snow White">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Mar 21, 2025</div>
+                <div class="countdown" id="countdown4"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">WrestleMania 41 (Night 1)</div>
+            <img src="w411.jpg" alt="WrestleMania 41 (Night 1)">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Apr 20, 2025 at 3:30 AM</div>
+                <div class="countdown" id="countdown12"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">WrestleMania 41 (Night 2)</div>
+            <img src="w412.jpg" alt="WrestleMania 41 (Night 2)">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Apr 21, 2025 at 3:30 AM</div>
+                <div class="countdown" id="countdown13"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Ballerina</div>
+            <img src="balle.jpg" alt="Ballerina">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Jun 06, 2025</div>
+                <div class="countdown" id="countdown8"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">Mission: Impossible 8</div>
+            <img src="mi.jpg" alt="Mission: Impossible 8">
+            <div class="movie-info">
+                <div class="release-date">Release Date: May 23, 2025</div>
+                <div class="countdown" id="countdown5"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">M3GAN 2.0</div>
+            <img src="m3gan.jpg" alt="M3GAN 2.0">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Jun 27, 2025</div>
+                <div class="countdown" id="countdown6"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">The Conjuring: Last Rites</div>
+            <img src="cju.jpg" alt="The Conjuring: Last Rites">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Sep 05, 2025</div>
+                <div class="countdown" id="countdown7"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">World Cup 2026 (Opening Ceremony)</div>
+            <img src="wc26o.jpg" alt="World Cup 2026 (Opening Ceremony)">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Jun 11, 2026</div>
+                <div class="countdown" id="countdown14"></div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-title">World Cup 2026 (Closing Ceremony)</div>
+            <img src="wc26c.jpg" alt="World Cup 2026 (Closing Ceremony)">
+            <div class="movie-info">
+                <div class="release-date">Release Date: Jul 19, 2026</div>
+                <div class="countdown" id="countdown15"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to calculate the countdown or days since release
+        function updateCountdown(releaseDate, elementId) {
+            const countdownElement = document.getElementById(elementId);
+            const releaseTime = new Date(releaseDate).getTime();
+
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = releaseTime - now;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    const daysSinceRelease = Math.floor(Math.abs(distance) / (1000 * 60 * 60 * 24));
+                    countdownElement.innerHTML = `Movie Released ${daysSinceRelease} days ago`;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+
+        // Set countdowns for each movie
+        updateCountdown("2024-10-18T00:00:00", "countdown1");
+        updateCountdown("2024-12-20T00:00:00", "countdown2");
+        updateCountdown("2024-12-25T00:00:00", "countdown3");
+        updateCountdown("2025-03-21T00:00:00", "countdown4");
+        updateCountdown("2025-05-23T00:00:00", "countdown5");
+        updateCountdown("2025-06-27T00:00:00", "countdown6");
+        updateCountdown("2025-09-05T00:00:00", "countdown7");
+        updateCountdown("2025-06-06T00:00:00", "countdown8");
+        updateCountdown("2024-10-06T01:00:00", "countdown9");
+        updateCountdown("2024-11-02T19:30:00", "countdown10");
+        updateCountdown("2025-02-02T03:30:00", "countdown11");
+        updateCountdown("2025-04-20T03:30:00", "countdown12");
+        updateCountdown("2025-04-21T03:30:00", "countdown13");
+        updateCountdown("2026-06-11T00:00:00", "countdown14");
+        updateCountdown("2026-07-19T00:00:00", "countdown15");
+    </script>
+
+</body>
+</html>
